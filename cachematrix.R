@@ -1,7 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The two functions makeCacheMatrix () and cacheSolve () 
+## can cache the inverse of a matrix if the respective matrix is invertible.
+## 
 
-## Write a short comment describing this function
+## makeCacheMatrix () is a function that creates a 
+## special "matrix" object that can cache its inverse.
+## Therefore, an invertible matrix has to be passed 
+## as an argument to the function. This function creates four other functions and
+## stores the initial matrix to pass it to the next function (cacheSolve()).
+## The set function allows to assign new values to the objected created by makeCacheMatrix ().
 
 makeCacheMatrix <- function(x = matrix()) {
   
@@ -22,7 +28,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## 
+## cacheSolve () checks whether the fetched value for 'inversion' 
+## is not NULL, if so the data are taken from the catch.
+## Otherwise the matrix will be taken in with x$get() and afterwards inverted
+## with x$setinversion(inversion).
 
 cacheSolve <- function(x, ...) {
     inversion <- x$getinversion ()
